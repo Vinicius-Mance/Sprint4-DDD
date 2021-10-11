@@ -1,4 +1,4 @@
-package br.com.sprint4;
+package br.com;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
