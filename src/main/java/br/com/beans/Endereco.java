@@ -12,11 +12,11 @@ public class Endereco {
     private String gia;
     private String ddd;
     private String siafi;
-
+    private boolean erro = false;
     public Endereco() {
     }
 
-    public Endereco(String cep, String logradouro, String complemento, String bairro, String localidade, String uf, String ibge, String gia, String ddd, String siafi) {
+    public Endereco(String cep, String logradouro, String complemento, String bairro, String localidade, String uf, String ibge, String gia, String ddd, String siafi, boolean erro) {
         this.cep = cep;
         this.logradouro = logradouro;
         this.complemento = complemento;
@@ -27,6 +27,9 @@ public class Endereco {
         this.gia = gia;
         this.ddd = ddd;
         this.siafi = siafi;
+        if (erro) {
+            this.erro = erro;
+        }
     }
 
     public String getCep() {
@@ -107,6 +110,14 @@ public class Endereco {
 
     public void setSiafi(String siafi) {
         this.siafi = siafi;
+    }
+
+    public boolean isErro() {
+        return erro;
+    }
+
+    public void setErro(boolean erro) {
+        this.erro = erro;
     }
 
     @Override

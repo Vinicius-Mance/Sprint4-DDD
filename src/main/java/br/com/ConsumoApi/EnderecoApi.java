@@ -9,17 +9,20 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 public class EnderecoApi {
 
-    public static String consumirAPI() {
+    public static String consumirAPI(String cep) {
         RestTemplate template = new RestTemplate();
         UriComponents uri = UriComponentsBuilder.newInstance()
                 .scheme("https")
                 .host("viacep.com.br")
-                .path("ws/01538001/json")
+                .path("ws/" + cep + "/json")
                 .build();
-
-        ResponseEntity<Endereco> entity = template.getForEntity(uri.toUriString(), Endereco.class);
-
-        return entity.getBody().toString();
-
+        if (cep.length() == 8) {
+            ResponseEntity<Endereco> entity = template.getForEntity(uri.toUriString(), Endereco.class);
+            if (!entity.getBody().isErro()) {
+                return entity.getBody().toString();
+            }
+        }
+        return "deu ruim";
     }
 }
+

@@ -2,15 +2,14 @@ package br.com.controller;
 
 import br.com.ConsumoApi.EnderecoApi;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ApiController {
 
-    @GetMapping("/endereco")
-    public String endereco() {
-        return EnderecoApi.consumirAPI();
+    @RequestMapping(value="/endereco/{cep}", method = RequestMethod.GET)
+    public String endereco(@PathVariable("cep") String cep) {
+          return EnderecoApi.consumirAPI(cep);
     }
 
 }
