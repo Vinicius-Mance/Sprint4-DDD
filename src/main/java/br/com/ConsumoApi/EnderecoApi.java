@@ -19,6 +19,7 @@ public class EnderecoApi {
         if (cep.length() == 8) {
             ResponseEntity<Endereco> entity = template.getForEntity(uri.toUriString(), Endereco.class);
             if (!entity.getBody().isErro()) {
+                
                 return entity.getBody().toString();
             }
         }
