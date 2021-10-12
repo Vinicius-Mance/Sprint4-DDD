@@ -7,7 +7,13 @@ import java.util.List;
 
 public interface EnderecoRepository extends CrudRepository<Endereco, Integer>{
 
-   List<Endereco> findAll();
+    List<Endereco> findAll();
 
-//   <EnderecoMod extends Endereco>  EndrecoMod save(EnderecoMod endereco);
+
+    Endereco findByCodigo (int codigo);
+
+
+    void delete(Endereco endereco);
+
+    <EnderecoMod extends Endereco>  EndrecoMod save(EnderecoMod endereco);
 }
