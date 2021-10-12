@@ -9,7 +9,9 @@ public class ApiController {
 
     @RequestMapping(value="/endereco/{cep}", method = RequestMethod.GET)
     public String endereco(@PathVariable("cep") String cep) {
-          return EnderecoApi.consumirAPI(cep);
+        
     }
+
+}
 
 }
