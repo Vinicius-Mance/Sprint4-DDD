@@ -15,5 +15,5 @@ public interface EnderecoRepository extends CrudRepository<Endereco, Integer>{
 
     void delete(Endereco endereco);
 
-    <EnderecoMod extends Endereco>  EndrecoMod save(EnderecoMod endereco);
+    <EnderecoMod extends Endereco>  EnderecoMod save(EnderecoMod endereco);
 }

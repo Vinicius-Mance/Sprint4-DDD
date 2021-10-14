@@ -42,7 +42,6 @@ public class Endereco {
     @Column(name="siafi")
     private String siafi;
 
-
     private boolean erro = false;
 
     public Endereco() {
